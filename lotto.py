@@ -1,7 +1,3 @@
-__author__ = "Daniel Kaliski"
-__copyright__ = "Copyright (C) 2025 Daniel Kaliski"
-__license__ = "Public Domain"
-__version__ = "1.0.5"
 import random
 from collections import Counter
 raw_text = """
