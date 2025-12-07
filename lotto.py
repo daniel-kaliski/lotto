@@ -7279,6 +7279,12 @@ raw_text = """
 7	13	22	30	38	39
 9	19	20	22	27	44
 8	22	31	43	45	49
+3	9	26	31	42	44
+27	33	38	43	45	47
+3	23	28	31	42	46
+3	9	29	30	32	47
+21	23	32	45	46	47
+4	14	25	27	43	44
 """
 
 nums = [int(x) for x in raw_text.split() if x.isdigit()]
@@ -7302,7 +7308,7 @@ for _ in range(N_SIM):
 top6 = [num for num, _ in freq.most_common(6)]
 
 
-top5 = [num for num, _ in freq.most_common(4)]
+top5 = [num for num, _ in freq.most_common(5)]
 rand3 = random.sample([i for i in range(1,50) if i not in top5], 3)
 combo2 = sorted(top5 + rand3)
 
