@@ -7296,7 +7296,7 @@ raw_text = """
 9	26	31	40	45	48
 1	6	15	26	29	30
 25	26	32	38	39	46
-7	10	21	22	42	45
+7	10	21	22	42	45  
 """
 
 nums = [int(x) for x in raw_text.split() if x.isdigit()]
