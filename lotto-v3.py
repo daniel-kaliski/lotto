@@ -1,7 +1,6 @@
 import random
 import csv
 import urllib.request
-import ssl  # <--- Dodany import
 from collections import Counter
 
 # URL do bazy wyników Lotto
@@ -9,13 +8,9 @@ URL = "https://www.wynikilotto.net.pl/download/lotto.csv"
 
 print("Pobieranie najnowszych wyników z sieci...")
 
-# Wyłączenie weryfikacji certyfikatów SSL
-context = ssl._create_unverified_context()
-
+# Pobieranie i dekodowanie danych
 req = urllib.request.Request(URL, headers={'User-Agent': 'Mozilla/5.0'})
-
-# Dodanie context=context do urlopen
-with urllib.request.urlopen(req, context=context) as response:
+with urllib.request.urlopen(req) as response:
     lines = [line.decode('utf-8') for line in response.readlines()]
 
 nums = []
