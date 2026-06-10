@@ -30,7 +30,6 @@ Projekt jest niezwykle lekki i **nie wymaga instalacji żadnych zewnętrznych bi
    python lotto.py
 
 ## 📸 Zrzuty ekranu
-Ekran główny aplikacji:
 
 <img width="762" height="694" alt="Zrzut ekranu 2026-06-10 o 21 32 33" src="https://github.com/user-attachments/assets/f8aec1df-f179-4667-b5bf-7edb770a2f0c" />
 
