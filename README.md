@@ -26,5 +26,5 @@ Projekt jest niezwykle lekki i **nie wymaga instalacji żadnych zewnętrznych bi
    ```bash
    git clone [https://github.com/daniel-kaliski/lotto.git](https://github.com/daniel-kaliski/lotto.git)
 2. Przejdź do folderu z projektem i uruchom plik:
-
+   ```bash
    python lotto-v3.py
