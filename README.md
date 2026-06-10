@@ -28,7 +28,10 @@ Projekt jest niezwykle lekki i **nie wymaga instalacji żadnych zewnętrznych bi
 2. Przejdź do folderu z projektem i uruchom plik:
    ```bash
    python lotto.py
-📸 Zrzuty ekranu
-(Tutaj warto dodać ścieżkę do screena działającej aplikacji, np.:)
+
+## 📸 Zrzuty ekranu
+Ekran główny aplikacji:
 <img width="762" height="694" alt="Zrzut ekranu 2026-06-10 o 21 32 33" src="https://github.com/user-attachments/assets/f8aec1df-f179-4667-b5bf-7edb770a2f0c" />
-)
+
+## 💡 Architektura kodu
+Aplikacja wykorzystuje klasę LottoGUI do zarządzania interfejsem graficznym. Ze względu na ograniczenia standardowych przycisków w bibliotece Tkinter (brak właściwości border-radius), zaimplementowano własną klasę RoundedButton dziedziczącą po tk.Canvas. Pozwala to na tworzenie gładkich, wektorowych zaokrągleń rogów i zmianę kolorów (hover states) poprzez bindowanie zdarzeń myszy (<Enter>, <Leave>, <ButtonPress-1>). Bezpieczna komunikacja między wątkiem obliczeniowym a głównym wątkiem GUI odbywa się za pomocą metody root.after().
