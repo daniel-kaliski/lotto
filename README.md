@@ -28,3 +28,7 @@ Projekt jest niezwykle lekki i **nie wymaga instalacji żadnych zewnętrznych bi
 2. Przejdź do folderu z projektem i uruchom plik:
    ```bash
    python lotto.py
+📸 Zrzuty ekranu
+(Tutaj warto dodać ścieżkę do screena działającej aplikacji, np.:)
+<img width="762" height="694" alt="Zrzut ekranu 2026-06-10 o 21 32 33" src="https://github.com/user-attachments/assets/f8aec1df-f179-4667-b5bf-7edb770a2f0c" />
+)
