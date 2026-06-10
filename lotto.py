@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # ==============================================================================
-# Nazwa pliku: Analizator_Symulator_Lotto.py
+# Nazwa pliku: lotto.py
 # 
 # Copyright (c) 2026 Daniel Kaliski
 # Ten kod jest objęty licencją GNU GENERAL PUBLIC LICENSE GPL-3.0.
