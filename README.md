@@ -24,8 +24,8 @@ Projekt jest niezwykle lekki i **nie wymaga instalacji żadnych zewnętrznych bi
 
 1. Sklonuj repozytorium na swój dysk:
    ```bash
-   git clone [https://github.com/daniel-kaliski/lotto.git](https://github.com/daniel-kaliski/lotto.git)
-2. Przejdź do folderu z projektem i uruchom plik:
+   git clone https://github.com/daniel-kaliski/lotto.git
+3. Przejdź do folderu z projektem i uruchom plik:
    ```bash
    python lotto.py
 
