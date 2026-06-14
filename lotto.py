@@ -18,14 +18,12 @@ import tkinter as tk
 from tkinter import ttk
 import threading
 
-# URL do bazy wyników Lotto
 URL = "https://www.wynikilotto.net.pl/download/lotto.csv"
 
 class RoundedButton(tk.Canvas):
     """Niestandardowy przycisk z zaokrąglonymi rogami oparty na tk.Canvas"""
     def __init__(self, parent, text, command, radius=20, bg="#003366", fg="white", 
                  hover_bg="#004080", disabled_bg="#a0a0a0", font=("Segoe UI", 10, "bold"), *args, **kwargs):
-        # Pobranie koloru tła rodzica, aby ukryć tło płótna poza zaokrągleniami
         parent_bg = parent.cget("bg")
         super().__init__(parent, highlightthickness=0, bg=parent_bg, *args, **kwargs)
         
@@ -49,7 +47,6 @@ class RoundedButton(tk.Canvas):
         self.delete("all")
         width = self.winfo_width()
         height = self.winfo_height()
-        # Zabezpieczenie przed błędami przy zerowych wymiarach podczas inicjalizacji
         if width < self.radius * 2 or height < self.radius * 2:
             return
             
@@ -75,7 +72,7 @@ class RoundedButton(tk.Canvas):
 
     def _on_press(self, event):
         if not self.is_disabled:
-            self.itemconfig("bg", fill=self.hover_bg) # Efekt wciśnięcia
+            self.itemconfig("bg", fill=self.hover_bg) 
 
     def _on_release(self, event):
         if not self.is_disabled:
@@ -102,37 +99,30 @@ class LottoGUI:
         self.root.geometry("650x550")
         self.root.resizable(False, False)
         
-        # Ustawienie ujednoliconego tła dla estetyki zaokrąglonych rogów
         bg_color = "#f0f0f0"
         self.root.configure(bg=bg_color)
 
-        # Ramka główna (używamy tk.Frame zamiast ttk.Frame dla pełnej kontroli nad tłem)
         main_frame = tk.Frame(root, padx=15, pady=15, bg=bg_color)
         main_frame.pack(fill=tk.BOTH, expand=True)
 
-        # Kontener dla przycisku
         btn_container = tk.Frame(main_frame, height=50, bg=bg_color)
         btn_container.pack(fill=tk.X, pady=(0, 15))
         btn_container.pack_propagate(False)
 
-        # Nasz nowy niestandardowy zaokrąglony i przyciemniony przycisk
         self.start_btn = RoundedButton(
             btn_container, 
             text="Pobierz wyniki i uruchom symulację (14M)", 
             command=self.start_processing,
-            radius=20,          # Promień zaokrąglenia
-            bg="#003366",       # Bardzo ciemny niebieski (granat)
-            hover_bg="#004080", # Lekko jaśniejszy przy najechaniu
+            radius=20,          
+            bg="#003366",       
+            hover_bg="#004080", 
             fg="white"
         )
-        # Szerokość 50% i wycentrowanie
         self.start_btn.place(relx=0.5, rely=0.5, relwidth=0.5, relheight=0.9, anchor=tk.CENTER)
 
-        # Pasek postępu
         self.progress = ttk.Progressbar(main_frame, orient=tk.HORIZONTAL, mode='indeterminate')
         self.progress.pack(fill=tk.X, pady=(0, 15))
 
-        # Pole tekstowe na wyniki
         self.text_area = tk.Text(
             main_frame, 
             wrap=tk.WORD, 
@@ -147,7 +137,6 @@ class LottoGUI:
         )
         self.text_area.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-        # Scrollbar do pola tekstowego
         scrollbar = ttk.Scrollbar(main_frame, command=self.text_area.yview)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.text_area.config(yscrollcommand=scrollbar.set)
@@ -166,7 +155,6 @@ class LottoGUI:
         self.text_area.delete(1.0, tk.END)
         self.text_area.config(state=tk.DISABLED)
 
-        # Użycie nowej metody do blokowania własnego przycisku
         self.start_btn.set_state(tk.DISABLED)
         self.progress.start(15)
 
@@ -234,7 +222,6 @@ class LottoGUI:
 
         finally:
             self.root.after(0, self.progress.stop)
-            # Odblokowanie własnego przycisku
             self.root.after(0, lambda: self.start_btn.set_state(tk.NORMAL))
 
 if __name__ == "__main__":
