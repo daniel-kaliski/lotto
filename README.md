@@ -2,7 +2,7 @@
 
 Zaawansowana aplikacja desktopowa napisana w języku Python, służąca do pobierania, analizy historycznych wyników losowań Lotto oraz przeprowadzania wielkich symulacji statystycznych. Aplikacja symuluje 14 milionów losowań (odpowiadających całkowitej liczbie możliwych kombinacji w polskim Lotto), korzystając z metody Monte Carlo, aby wygenerować rekomendowane zestawy liczb na podstawie faktycznych danych historycznych.
 
-## ✨ Główne funkcje
+## Główne funkcje
 
 * **Pobieranie danych na żywo:** Automatyczne pobieranie i parsowanie najnowszej bazy wyników Lotto w formacie CSV z zewnętrznego serwera.
 * **Analiza historyczna:** Obliczanie częstotliwości występowania poszczególnych liczb na przestrzeni wszystkich dotychczasowych losowań (Top 10).
@@ -20,7 +20,7 @@ Projekt jest niezwykle lekki i **nie wymaga instalacji żadnych zewnętrznych bi
 * **Współbieżność:** `threading`
 * **Przetwarzanie danych:** `urllib`, `csv`, `collections.Counter`, `random`
 
-## 🚀 Jak uruchomić?
+## Jak uruchomić?
 
 1. Sklonuj repozytorium na swój dysk:
    ```bash
@@ -29,9 +29,9 @@ Projekt jest niezwykle lekki i **nie wymaga instalacji żadnych zewnętrznych bi
    ```bash
    python lotto.py
 
-## 📸 Zrzuty ekranu
+## Zrzuty ekranu
 
 <img width="762" height="694" align="center" alt="Zrzut ekranu 2026-06-10 o 21 32 33" src="https://github.com/user-attachments/assets/f8aec1df-f179-4667-b5bf-7edb770a2f0c" />
 
-## 💡 Architektura kodu
+## Architektura kodu
 Aplikacja wykorzystuje klasę `LottoGUI` do zarządzania interfejsem graficznym. Ze względu na ograniczenia standardowych przycisków w bibliotece `Tkinter` (brak właściwości `border-radius`), zaimplementowano własną klasę `RoundedButton` dziedziczącą po `tk.Canvas`. Pozwala to na tworzenie gładkich, wektorowych zaokrągleń rogów i zmianę kolorów (hover states) poprzez bindowanie zdarzeń myszy (`<Enter>`, `<Leave>`, `<ButtonPress-1>`). Bezpieczna komunikacja między wątkiem obliczeniowym a głównym wątkiem GUI odbywa się za pomocą metody `root.after()`.
