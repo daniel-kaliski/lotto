@@ -4,7 +4,7 @@ Zaawansowana aplikacja desktopowa napisana w języku Python, służąca do pobie
 
 ## Główne funkcje
 
-* **Pobieranie danych na żywo:** Automatyczne pobieranie i parsowanie najnowszej bazy wyników Lotto w formacie CSV z zewnętrznego serwera.
+* **Pobieranie danych na żywo:** Automatyczne pobieranie i parsowanie najnowszej bazy wyników Lotto z zewnętrznego serwera.
 * **Analiza historyczna:** Obliczanie częstotliwości występowania poszczególnych liczb na przestrzeni wszystkich dotychczasowych losowań (Top 10).
 * **Symulacja Monte Carlo:** Błyskawiczna symulacja **14 000 000** losowań w celu zbadania rozkładu prawdopodobieństwa.
 * **Generowanie rekomendacji:** Proponowanie gotowych zestawów liczb na podstawie różnych strategii statystycznych (m m.in. najczęstsze, hybrydowe z losowymi).
