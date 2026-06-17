@@ -11,7 +11,7 @@ Zaawansowana aplikacja desktopowa napisana w języku Python, służąca do pobie
 * **Asynchroniczny interfejs GUI:** Główna pętla obliczeniowa działa w osobnym wątku (`threading`), co zapobiega zawieszaniu się interfejsu (tzw. *UI freezing*) podczas pobierania danych i ciężkich operacji obliczeniowych.
 * **Niestandardowy UI:** Nowoczesny, estetyczny wygląd z autorskim, zaokrąglonym przyciskiem opartym na komponencie `tk.Canvas` oraz animowanym paskiem postępu.
 
-## 🛠️ Technologie i Wymagania
+## Technologie i Wymagania
 
 Projekt jest niezwykle lekki i **nie wymaga instalacji żadnych zewnętrznych bibliotek** (np. przez `pip`). Opiera się wyłącznie na standardowej bibliotece Pythona.
 
