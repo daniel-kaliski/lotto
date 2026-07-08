@@ -21,7 +21,6 @@ import threading
 URL = "https://www.wynikilotto.net.pl/download/lotto.csv"
 
 class RoundedButton(tk.Canvas):
-    """Niestandardowy przycisk z zaokrąglonymi rogami oparty na tk.Canvas"""
     def __init__(self, parent, text, command, radius=20, bg="#003366", fg="white", 
                  hover_bg="#004080", disabled_bg="#a0a0a0", font=("Segoe UI", 10, "bold"), *args, **kwargs):
         parent_bg = parent.cget("bg")
@@ -55,7 +54,6 @@ class RoundedButton(tk.Canvas):
         self.create_text(width/2, height/2, text=self.text, fill=self.fg_color, font=self.font, tags="text")
 
     def _create_rounded_rect(self, x1, y1, x2, y2, r, **kwargs):
-        """Rysuje zaokrąglony prostokąt"""
         points = (x1+r, y1, x1+r, y1, x2-r, y1, x2-r, y1, x2, y1, x2, y1+r, x2, y1+r, x2, y2-r, x2, y2-r, x2, y2, 
                   x2-r, y2, x2-r, y2, x1+r, y2, x1+r, y2, x1, y2, x1, y2-r, x1, y2-r, x1, y1+r, x1, y1+r, x1, y1)
         return self.create_polygon(points, **kwargs, smooth=True)
@@ -81,7 +79,6 @@ class RoundedButton(tk.Canvas):
                 self.command()
 
     def set_state(self, state):
-        """Zmienia stan przycisku (aktywny/zablokowany)"""
         if state == tk.DISABLED:
             self.is_disabled = True
             self.itemconfig("bg", fill=self.disabled_bg)
